@@ -1,0 +1,76 @@
+* {
+    font-family: Consolas;
+}
+
+.light_theme_body {
+    background-color: rgb(255,255,224);
+}
+
+.dark_theme_body {
+    background-color: rgb(46, 52, 64);
+}
+
+.button {
+    float: right;
+    border-style: hidden;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+    margin-left: 5px;
+    margin-bottom: 15px;
+}
+
+.user {
+    float: left;
+    text-align: center;
+    border-style: hidden;
+    border-radius: 5px;
+    height: 30px;
+    font-size: 16px;
+    margin-left: 5px;
+    background-color: rgba(100, 149, 237, .5);
+    color: antiquewhite;
+}
+
+.light_theme_button {
+    background-color: rgba(153, 50, 204, .5);
+    color: rgb(46, 52, 64);
+}
+
+.dark_theme_button {
+    background-color: rgba(100, 149, 237, .5);
+    color: antiquewhite;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.container {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    column-count: 5;
+    column-gap: 10px;
+}
+
+.item img{
+    margin-top: 5px;
+    width: 100%;
+}
+
+#theme_button_div {
+    position: fixed;
+    bottom: 30px;
+    right: 15px;
+}
+
+.theme_button {
+    display: block;
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 13px 0
+}

@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: white;
+}
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+    z-index: -1;
+}
+
+.pic_div {
+    float: left;
+    width: 33%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.svg_watermark {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KCTx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjMwIiBmaWxsPSIjYTJhOWI2IiBmaWxsLW9wYWNpdHk9IjAuNSIgZm9udC1mYW1pbHk9InN5c3RlbS11aSwgc2Fucy1zZXJpZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdHJhbnNmb3JtPSdyb3RhdGUoLTQ1LCAxMDAgMTAwKSc+CgkJSGVsbG8gV2ViCgk8L3RleHQ+Cjwvc3ZnPg==");
+}
+
+button {
+    /*float: left;*/
+    text-align: center;
+    border-style: hidden;
+    border-radius: 5px;
+    height: 30px;
+    font-size: 16px;
+    margin-left: 5px;
+    background-color: rgba(100, 149, 237, 1);
+    color: rgb(46, 52, 64);
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+

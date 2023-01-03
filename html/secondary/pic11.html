@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pic11</title>
+    <link type="text/css" rel="stylesheet" href="/css/secondary.css">
+    <script type="text/javascript" src="/js/cryptostego.min.js"></script>
+    <script type="text/javascript" src="/js/watermark.js"></script>
+    <script type="text/javascript" src="/js/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+<div><button class="user"></button></div>
+<div>
+    <div class="pic_div">
+        <img src="/img/pic11.jpg" onload="writeIMG()">
+    </div>
+    <div class="svg_watermark pic_div">
+        <img src="/img/pic11.jpg">
+    </div>
+    <div id="blind" class="pic_div">
+    </div>
+</div>
+<script>
+    console.log(localStorage.getItem("token"))
+    $.ajax({
+        type: 'GET',
+        url: 'http://localhost:8080/check',
+        headers: {
+            Authorization: localStorage.getItem("token")
+        },
+        dataType: 'json',
+        success: function (data) {
+            if (data.status !== 0) {
+                window.location.href = 'http://localhost:8080/check'
+            } else {
+                let button = document.getElementsByClassName('user')[0]
+                button.innerText = '当前用户: ' + localStorage.getItem('email')
+            }
+        }
+    })
+</script>
+</body>
+</html>

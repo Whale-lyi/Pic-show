@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页</title>
+    <link type="text/css" rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="/js/sign.js"></script>
+    <script type="text/javascript" src="/js/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+<div id="login_div" class="center">
+    <h1>REGISTER</h1>
+    <p>
+        <label>
+            Email&nbsp;&nbsp;&nbsp;:
+            <input type="text" name="email">
+        </label>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </p>
+    <p>
+        <label>
+            Password:
+            <input type="password" name="password">
+        </label>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </p>
+    <p>
+        <label>
+            Confirm&nbsp;:
+            <input type="password" name="confirm">
+        </label>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </p>
+    <br>
+    <p>
+        <input type="button" class="button center" value="Sign Up" onclick="register()">
+    </p>
+    <br>
+    <p class="center">
+        Hava an account? You can click <a href="/login">here</a> to sign in
+    </p>
+</div>
+<script>
+    let email = document.getElementsByTagName('input')[0]
+    email.onkeyup = function () {
+        let reg = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
+        let span0 = document.getElementsByTagName('span')[0]
+        if (!reg.test(this.value)) {
+            span0.innerHTML = '请输入邮箱'
+            emailCheck = false
+        } else {
+            span0.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+            emailCheck = true
+        }
+    }
+
+    let password = document.getElementsByTagName('input')[1]
+    let number = /[0-9]/
+    let lowLetter = /[a-z]/
+    let upLetter = /[A-Z]/
+    let special = /[+=_,.<>{}~!@#$%^&*-]/g
+    password.onkeyup = function () {
+        let score = 0
+        let value = this.value
+        // 判断长度
+        if (value.length <= 4) score += 5
+        else if (value.length <= 7) score += 10
+        else score += 25
+        // 判断字母
+        if (lowLetter.test(value) && upLetter.test(value)) score += 20
+        else if (lowLetter.test(value) || upLetter.test(value)) score += 10
+        // 判断数字
+        if (value.match(/[0-9]/g) !== null && value.match(/[0-9]/g).length >= 3) score += 20
+        else if (value.match(/[0-9]/g) !== null && value.match(/[0-9]/g).length >= 1) score += 10
+        // 判断符号
+        if (value.match(special) !== null && value.match(special).length > 1) score += 25
+        else if (value.match(special) !== null && value.match(special).length === 1) score += 10
+        // 奖励
+        if (number.test(value) && upLetter.test(value) && lowLetter.test(value) && special.test(value)) score += 5
+        else if (number.test(value) && (upLetter.test(value) || lowLetter.test(value)) && special.test(value)) score += 3
+        else if (number.test(value) && (upLetter.test(value) || lowLetter.test(value))) score += 2
+
+        let span1 = document.getElementsByTagName('span')[1]
+        console.log(score)
+        if (score >= 70) {
+            // Secure
+            span1.innerHTML = 'Secure&nbsp;&nbsp;&nbsp;'
+            span1.style.color = 'limegreen'
+        } else if (score >= 50) {
+            // Average
+            span1.innerHTML = 'Average&nbsp;&nbsp;'
+            span1.style.color = 'yellow'
+        } else {
+            // Weak
+            span1.innerHTML = 'Weak&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+            span1.style.color = 'red'
+        }
+    }
+</script>
+</body>
+</html>

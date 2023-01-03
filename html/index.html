@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <link type="text/css" rel="stylesheet" href="/css/index.css">
+    <script type="text/javascript" src="/js/theme.js"></script>
+    <script type="text/javascript" src="/js/jquery-3.6.3.min.js"></script>
+</head>
+<body class="dark_theme_body">
+<div>
+    <button class="user dark_theme_button"></button>
+    <button class="button dark_theme_button" onclick="log_off()">Log off</button>
+</div>
+
+<div class="container">
+    <div class="item">
+        <a href="secondary/pic1.html" target="_blank">
+            <img src="https://whale-picture.oss-cn-hangzhou.aliyuncs.com/assignment-img/web-pic1.jpg" alt="pic1">
+        </a>
+    </div>
+    <div class="item">
+        <a href="secondary/pic2.html" target="_blank">
+            <img src="https://whale-picture.oss-cn-hangzhou.aliyuncs.com/assignment-img/web-pic2.jpg" alt="pic2">
+        </a>
+    </div>
+    <div class="item">
+        <a href="secondary/pic3.html" target="_blank">
+            <img src="https://whale-picture.oss-cn-hangzhou.aliyuncs.com/assignment-img/web-pic3.jpg" alt="pic3">
+        </a>
+    </div>
+    <div class="item">
+        <a href="secondary/pic4.html" target="_blank">
+            <img src="https://whale-picture.oss-cn-hangzhou.aliyuncs.com/assignment-img/web-pic4.jpg" alt="pic4">
+        </a>
+    </div>
+    <div class="item">
+        <a href="secondary/pic5.html" target="_blank">
+            <img src="https://whale-picture.oss-cn-hangzhou.aliyuncs.com/assignment-img/web-pic5.jpg" alt="pic5">
+        </a>
+    </div>
+    <div class="item">
+        <a href="secondary/pic6.html" target="_blank">
+            <img src="https://whale-picture.oss-cn-hangzhou.aliyuncs.com/assignment-img/web-pic6.jpg" alt="pic6">
+        </a>
+    </div>
+    <div class="item">
+        <a href="secondary/pic7.html" target="_blank">
+            <img src="https://whale-picture.oss-cn-hangzhou.aliyuncs.com/assignment-img/web-pic7.jpg" alt="pic7">
+        </a>
+    </div>
+    <div class="item">
+        <a href="secondary/pic8.html" target="_blank">
+            <img src="https://whale-picture.oss-cn-hangzhou.aliyuncs.com/assignment-img/web-pic8.jpg" alt="pic8">
+        </a>
+    </div>
+    <div class="item">
+        <a href="secondary/pic9.html" target="_blank">
+            <img src="https://whale-picture.oss-cn-hangzhou.aliyuncs.com/assignment-img/web-pic9.jpg" alt="pic9">
+        </a>
+    </div>
+    <div class="item">
+        <a href="secondary/pic10.html" target="_blank">
+            <img src="https://whale-picture.oss-cn-hangzhou.aliyuncs.com/assignment-img/web-pic10.jpg" alt="pic10">
+        </a>
+    </div>
+    <div class="item">
+        <a href="secondary/pic11.html" target="_blank">
+            <img src="https://whale-picture.oss-cn-hangzhou.aliyuncs.com/assignment-img/web-pic11.jpg" alt="pic11">
+        </a>
+    </div>
+    <div class="item">
+        <a href="secondary/pic12.html" target="_blank">
+            <img src="https://whale-picture.oss-cn-hangzhou.aliyuncs.com/assignment-img/web-pic12.jpg" alt="pic12">
+        </a>
+    </div>
+    <div class="item">
+        <a href="secondary/pic13.html" target="_blank">
+            <img src="https://whale-picture.oss-cn-hangzhou.aliyuncs.com/assignment-img/web-pic13.jpg" alt="pic13">
+        </a>
+    </div>
+    <div class="item">
+        <a href="secondary/pic14.html" target="_blank">
+            <img src="https://whale-picture.oss-cn-hangzhou.aliyuncs.com/assignment-img/web-pic14.jpg" alt="pic14">
+        </a>
+    </div>
+    <div class="item">
+        <a href="secondary/pic15.html" target="_blank">
+            <img src="https://whale-picture.oss-cn-hangzhou.aliyuncs.com/assignment-img/web-pic15.jpg" alt="pic15">
+        </a>
+    </div>
+</div>
+
+<div id="theme_button_div">
+    <button class="theme_button" style="background-color: rgb(255,255,224);" onclick="change_theme('light')"></button>
+    <button class="theme_button" style="background-color: rgb(46, 52, 64);" onclick="change_theme('dark')"></button>
+</div>
+
+<script>
+    $.ajax({
+        type: 'GET',
+        url: 'http://localhost:8080/check',
+        headers: {
+            Authorization: localStorage.getItem("token")
+        },
+        dataType: 'json',
+        success: function (data) {
+            if (data.status !== 0) {
+                window.location.href = 'http://localhost:8080/check'
+            } else {
+                let button = document.getElementsByClassName('user')[0]
+                button.innerText = '当前用户: ' + localStorage.getItem('email')
+            }
+        }
+    })
+
+    function log_off() {
+        localStorage.removeItem("token")
+        localStorage.removeItem("email")
+        window.location.href = "http://127.0.0.1:8080/login"
+    }
+</script>
+
+</body>
+</html>

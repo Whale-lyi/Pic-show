@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页</title>
+    <link type="text/css" rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="/js/sign.js"></script>
+    <script type="text/javascript" src="/js/captcha.js"></script>
+    <script type="text/javascript" src="/js/jquery-3.6.3.min.js"></script>
+    <script src="../public/js/sign.js"></script>
+</head>
+<body>
+<div id="login_div" class="center">
+    <h1>LOGIN</h1>
+    <p>
+        <label>
+            Email&nbsp;&nbsp;&nbsp;:
+            <input type="text" name="email">
+        </label>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </p>
+    <p>
+        <label>
+            Password:
+            <input type="password" name="password">
+        </label>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </p>
+    <p>
+        <label>
+            Captcha&nbsp;:
+            <input type="text" name="captcha">
+        </label>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </p>
+    <span></span>
+    <br>
+    <p>
+        <input type="button" class="button center" value="Sign In" onclick="login()">
+        <p><a href="">手机号登陆</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="">第三方登录</a></p>
+    </p>
+    <p class="center">
+        If you don't have accounts. Please click <a href="/register">here</a> to sign up
+    </p>
+</div>
+<script>
+    let input = document.getElementsByTagName('input')[0]
+    input.onkeyup = function () {
+        let reg = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
+        let span0 = document.getElementsByTagName('span')[0]
+        if (!reg.test(this.value)) {
+            span0.innerHTML = '请输入邮箱'
+            emailCheck = false
+        } else {
+            span0.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+            emailCheck = true
+        }
+    }
+</script>
+</body>
+</html>
