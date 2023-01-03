@@ -17,7 +17,7 @@ node ./app.js
 
 ### 2.1 登录
 
-![image-20230102220805570](https://whale-picture.oss-cn-hangzhou.aliyuncs.com/img/image-20230102220805570.png)
+![image-20230104004223617](https://whale-picture.oss-cn-hangzhou.aliyuncs.com/img/image-20230104004223617.png)
 
 - 邮箱、密码、验证码如果输入正确，会跳转到一级页面(见2.4)
 - **点击图形验证码时会自动刷新**，为方便用户输入，不区分大小写
@@ -52,7 +52,7 @@ node ./app.js
   | 错误           | 提示                                                         |
   | -------------- | ------------------------------------------------------------ |
   | 邮箱或密码为空 | <img src="https://whale-picture.oss-cn-hangzhou.aliyuncs.com/img/image-20230102184447104.png" alt="image-20230102184447104" style="zoom:80%;" /> |
-  | 邮箱已注册     | <img src="https://whale-picture.oss-cn-hangzhou.aliyuncs.com/img/image-20230102214618443.png" alt="image-20230102214618443" style="zoom:80%;" /> |
+  | 邮箱已注册     | <img src="https://whale-picture.oss-cn-hangzhou.aliyuncs.com/img/image-20230104004337422.png" alt="image-20230104004337422" style="zoom:80%;" /> |
   | 邮箱格式不符   | <img src="https://whale-picture.oss-cn-hangzhou.aliyuncs.com/img/image-20230102200228130.png" alt="image-20230102200228130" style="zoom:80%;" /> |
   | 两次密码不一致 | <img src="https://whale-picture.oss-cn-hangzhou.aliyuncs.com/img/image-20230102214944820.png" alt="image-20230102214944820" style="zoom:80%;" /> |
 
@@ -77,13 +77,13 @@ node ./app.js
 - 一级页面可以点击右下方按钮进行主题切换
 - 点击右上方 Log off 按钮会注销并回到登录页
 
-![image-20230102215211740](https://whale-picture.oss-cn-hangzhou.aliyuncs.com/img/image-20230102215211740.png)
+![image-20230104004004499](https://whale-picture.oss-cn-hangzhou.aliyuncs.com/img/image-20230104004004499.png)
 
 二级页面:
 
 - 显示原图，可见水印，频域水印图片
 
-<img src="https://whale-picture.oss-cn-hangzhou.aliyuncs.com/img/image-20230102215408490.png" alt="image-20230102215408490" style="zoom:80%;" />
+![image-20230104003921495](https://whale-picture.oss-cn-hangzhou.aliyuncs.com/img/image-20230104003921495.png)
 
 ## 具体实现
 
