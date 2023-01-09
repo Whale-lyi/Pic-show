@@ -1,5 +1,5 @@
 function loadIMGtoCanvas(canvasid, callback, maxsize) {
-    maxsize=(maxsize=== undefined)?0:maxsize;
+    maxsize = (maxsize === undefined) ? 0 : maxsize;
     var image = new Image();
     image.onload = function() {
         var w=image.width;

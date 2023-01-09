@@ -7,19 +7,27 @@
     <script type="text/javascript" src="/js/cryptostego.min.js"></script>
     <script type="text/javascript" src="/js/watermark.js"></script>
     <script type="text/javascript" src="/js/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="/js/jsfeat-min.js"></script>
+    <script type="text/javascript" src="/js/cartoon.js"></script>
 </head>
 <body>
 <div><button class="user"></button></div>
-<div>
-    <div class="pic_div">
-        <img src="/img/pic7.jpg" onload="writeIMG()">
-    </div>
-    <div class="svg_watermark pic_div">
-        <img src="/img/pic7.jpg">
-    </div>
-    <div id="blind" class="pic_div">
-    </div>
+
+<div class="pic_div">
+    <img src="/img/pic7.jpg" onload="writeIMG()">
 </div>
+
+<div class="pic_div" id="cartoon">
+    <canvas></canvas>
+</div>
+
+<div class="svg_watermark pic_div">
+    <img src="/img/pic7.jpg">
+</div>
+
+<div id="blind" class="pic_div">
+</div>
+
 <script>
     console.log(localStorage.getItem("token"))
     $.ajax({

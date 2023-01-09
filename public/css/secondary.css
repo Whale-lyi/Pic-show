@@ -15,11 +15,11 @@ img {
 
 .pic_div {
     float: left;
-    width: 33%;
-    height: 100vh;
+    width: 49%;
+    height: 90vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/
     border: 1px solid black;
 }
 
@@ -40,5 +40,4 @@ button {
     margin-bottom: 20px;
     margin-top: 10px;
 }
-
 
