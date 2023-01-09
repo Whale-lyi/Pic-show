@@ -2,6 +2,43 @@
 
 NJUSE Web-Frontend Project
 
+### 目录结构
+
+```bash
+│  .gitignore
+│  apiRouter.js			# 登录注册路由
+│  app.js				# 启动文件
+│  config.js			# jwt配置
+│  db.js				# 数据库配置
+│  package-lock.json
+│  package.json
+│  README.md
+│  router.js			# 页面路由
+│  web_2022.sql			# 数据库脚本
+│
+│
+├─html
+│  │  index.html		# 一级页面
+│  │  login.html		# 登录页
+│  │  register.html		# 注册页
+│  │
+│  └─secondary			# 二级页面
+│
+│
+└─public
+    ├─css
+    ├─img
+    └─js
+            captcha.js				# 生成图形验证码
+            cartoon.js				# 绘制黑白线稿
+            cryptostego.min.js
+            jquery-3.6.3.min.js
+            jsfeat-min.js
+            sign_up_in.js			# 登陆注册
+            theme.js				# 主题切换
+            watermark.js			# 生成水印
+```
+
 ### 项目启动
 
 数据库脚本见 web_2022.sql, 先创建数据库，修改 `db.js` 中的数据库信息
@@ -76,6 +113,8 @@ node ./app.js
 - 点击右上方 Log off 按钮会注销并回到登录页
 
 ![image-20230104004004499](https://whale-picture.oss-cn-hangzhou.aliyuncs.com/img/image-20230104004004499.png)
+
+![image-20230109211603096](https://whale-picture.oss-cn-hangzhou.aliyuncs.com/img/image-20230109211603096.png)
 
 ### 二级页面
 
