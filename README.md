@@ -7,9 +7,9 @@ NJUSE Web-Frontend Project
 ```bash
 │  .gitignore
 │  apiRouter.js			# 登录注册路由
-│  app.js				# 启动文件
+│  app.js			# 启动文件
 │  config.js			# jwt配置
-│  db.js				# 数据库配置
+│  db.js			# 数据库配置
 │  package-lock.json
 │  package.json
 │  README.md
